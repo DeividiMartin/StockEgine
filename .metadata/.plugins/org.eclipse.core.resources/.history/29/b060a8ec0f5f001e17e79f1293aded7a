@@ -1,0 +1,12 @@
+package database;
+
+public class DadosDB {
+	 String url = "jdbc:mysql://localhost:3306/enginestock";
+	 String user= "developer";
+	 String senha = "021617";
+	
+	 String connectionString = String.format("jdbc:mysql://localhost:3306/enginestock?user=developer&password=021617");
+
+	
+	
+}

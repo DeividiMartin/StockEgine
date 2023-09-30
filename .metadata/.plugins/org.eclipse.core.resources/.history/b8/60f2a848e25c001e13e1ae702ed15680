@@ -1,0 +1,92 @@
+package front;
+
+import java.awt.EventQueue;
+
+import javax.swing.JInternalFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import javax.swing.JList;
+import javax.swing.JComboBox;
+
+public class Adicionar extends JInternalFrame {
+
+	private static final long serialVersionUID = 1L;
+	private JTextField textModelo;
+	private JTextField textMarca;
+	private JTextField textNumeroMotor;
+	private JTextField textPotencia;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Adicionar frame = new Adicionar();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public Adicionar() {
+		setBounds(100, 100, 274, 385);
+		getContentPane().setLayout(null);
+		
+		JLabel lblModelo = new JLabel("Modelo");
+		lblModelo.setBounds(10, 108, 46, 14);
+		getContentPane().add(lblModelo);
+		
+		JLabel lblMarca = new JLabel("Marca");
+		lblMarca.setBounds(10, 149, 46, 14);
+		getContentPane().add(lblMarca);
+		
+		JLabel lblNumeroMotor = new JLabel("Nº Motor");
+		lblNumeroMotor.setBounds(10, 190, 46, 14);
+		getContentPane().add(lblNumeroMotor);
+		
+		JLabel lblPotencia = new JLabel("Potencia");
+		lblPotencia.setBounds(10, 225, 46, 14);
+		getContentPane().add(lblPotencia);
+		
+		textModelo = new JTextField();
+		textModelo.setBounds(92, 105, 156, 20);
+		getContentPane().add(textModelo);
+		textModelo.setColumns(10);
+		
+		textMarca = new JTextField();
+		textMarca.setBounds(92, 146, 156, 20);
+		getContentPane().add(textMarca);
+		textMarca.setColumns(10);
+		
+		textNumeroMotor = new JTextField();
+		textNumeroMotor.setBounds(92, 187, 156, 20);
+		getContentPane().add(textNumeroMotor);
+		textNumeroMotor.setColumns(10);
+		
+		textPotencia = new JTextField();
+		textPotencia.setBounds(92, 225, 54, 20);
+		getContentPane().add(textPotencia);
+		textPotencia.setColumns(10);
+		
+		JLabel lblTitulo = new JLabel("ADICIONAR MOTOR:");
+		lblTitulo.setBounds(69, 50, 102, 14);
+		getContentPane().add(lblTitulo);
+		
+		JButton btnCancelar = new JButton("Cancelar");
+		btnCancelar.setBounds(20, 301, 89, 23);
+		getContentPane().add(btnCancelar);
+		
+		JButton btnAdicionarMotor = new JButton("Adicionar");
+		btnAdicionarMotor.setBounds(132, 301, 89, 23);
+		getContentPane().add(btnAdicionarMotor);
+
+	}
+}

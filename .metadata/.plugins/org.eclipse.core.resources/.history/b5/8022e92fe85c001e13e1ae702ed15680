@@ -1,0 +1,81 @@
+package front;
+
+import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JDesktopPane;
+import javax.swing.JFrame;
+import javax.swing.JInternalFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+
+public class FrontEgineStock extends JFrame {
+
+	private static final long serialVersionUID = 1L;
+	private JPanel contentPane;
+	
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					FrontEgineStock frame = new FrontEgineStock();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public FrontEgineStock() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 440, 644);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		
+		JDesktopPane painelPrincipal = new JDesktopPane();
+		painelPrincipal.setBounds(0, 0, 414, 544);
+		JButton btnAdicionar = new JButton("Adiconar");
+		btnAdicionar.setBounds(137, 112, 151, 69);
+		JButton btnRemover = new JButton("Remover");
+		btnRemover.setBounds(137, 266, 151, 69);
+		JButton btnVizualizar = new JButton("Ver Motores");
+		btnVizualizar.setBounds(137, 407, 151, 69);
+		
+		btnAdicionar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Adicionar adicionar = new Adicionar();
+				 JInternalFrame[] janelasAbertas = painelPrincipal.getAllFrames();
+
+			        if (janelasAbertas.length > 0) {
+			            for (JInternalFrame janela : janelasAbertas) {
+			                janela.dispose(); // Fecha a janela anterior
+			            }
+			        }
+
+			        painelPrincipal.add(adicionar);
+			        adicionar.setVisible(true);
+					
+			}
+		});
+		contentPane.setLayout(null);
+		contentPane.add(btnAdicionar);
+		
+	;
+		contentPane.add(btnRemover);
+		contentPane.add(btnVizualizar);
+		contentPane.add(painelPrincipal);
+	
+	
+	}
+}

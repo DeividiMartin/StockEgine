@@ -1,0 +1,15 @@
+package database;
+
+public class DadosDB {
+    String url = "jdbc:mysql://containers-us-west-97.railway.app:7462/railway";
+    String usuario = "root";
+    String senha = "fcJy8nxBldj5v4loauEb";
+	
+    String connectionString = "jdbc:mysql -hcontainers-us-west-103.railway.app -uroot -p8P43FIuJNLiY1tzSImf4 --port 6263 --protocol=TCP railway";
+
+
+	 
+
+	
+	
+}

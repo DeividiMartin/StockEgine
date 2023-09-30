@@ -1,0 +1,54 @@
+package database;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+
+public class VerificarDB {
+	
+	DadosDB dadosDB = new DadosDB();
+
+	
+	
+	public List<MotorStock> Verificar() {
+	    List<MotorStock> motores = new ArrayList<>();
+
+	    try {
+	        Connection conexao = DriverManager.getConnection(dadosDB.getConnectionString();
+	        Statement statement = conexao.createStatement();
+
+	        String consultaSQL = "SELECT * FROM motores";
+	        ResultSet resultSet = statement.executeQuery(consultaSQL);
+
+	        while (resultSet.next()) {
+	            int id = resultSet.getInt("id");
+	            String modelo = resultSet.getString("modelo");
+	            String numeroMotor = resultSet.getString("numero_motor");
+	            String marca = resultSet.getString("marca");
+	            int potencia = resultSet.getInt("potencia");
+
+	            MotorStock motor = new MotorStock(id, modelo, numeroMotor, marca, potencia);
+	            
+	            // Adicione o motor à lista
+	            motores.add(motor);
+	        }
+
+	        resultSet.close();
+	        statement.close();
+	        conexao.close();
+	    } catch (SQLException e) {
+	        System.err.println("Erro ao consultar o banco de dados");
+	        e.printStackTrace();
+	    }
+	    
+	    return motores;
+	}
+
+	
+
+}

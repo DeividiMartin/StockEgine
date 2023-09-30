@@ -1,0 +1,32 @@
+package application;
+
+import java.util.Scanner;
+
+import database.AddDB;
+import database.Delete;
+
+public class Program {
+	public static void main (String[]agrs) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		AddDB addDB = new AddDB();
+		Delete delete = new Delete();
+		
+		
+		System.out.println("1.Adicionar motor \n2.Remover motor\nDigite a sua escolha: ");
+		int select = sc.nextInt();
+		
+		
+		
+		switch(select) {
+		
+		case 1:
+			addDB.adicionarMotor();
+			break;
+		case 2:
+			delete.deleteDb();
+			break;
+		}
+	}
+}

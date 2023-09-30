@@ -1,0 +1,42 @@
+package database;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+public class DB {
+	
+	DadosDB dadosDB = new DadosDB();
+	
+		
+	public void Connection(){
+		try {
+			Connection conexao = DriverManager.getConnection(dadosDB.connectionString);
+			
+			
+			String sql = "INSERT INTO motores(modelo, marca, numeromotor, potencia) VALUES (?, ?, ?, ?)";
+	
+			PreparedStatement preparedStatement = conexao.prepareStatement(sql);
+			
+            preparedStatement.setString(1, "Modelo1");
+            preparedStatement.setString(2, "Marca1");
+            preparedStatement.setString(3, "12345");
+            preparedStatement.setDouble(4, 50.0);
+            
+            preparedStatement.executeUpdate();
+            
+            preparedStatement.close();
+            conexao.close();
+            
+            System.out.println("Dados inseridos com sucesso na tabela motores.");
+	}
+		catch(SQLException e) {
+			System.err.println("Erro oaconectar com data base");
+			e.printStackTrace();
+			
+		}
+	}
+}
+
+	

@@ -1,0 +1,21 @@
+package database;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
+
+public class DadosDB {
+
+    public static String getConnectionString() throws IOException {
+        Properties props = new Properties();
+        try (FileInputStream fs = new FileInputStream("db.properties")) {
+            props.load(fs);
+        }
+        
+        String url = props.getProperty("url");
+        String usuario = props.getProperty("usuario");
+        String senha = props.getProperty("senha");
+        
+        return "jdbc:" + url + "?user=" + usuario + "&password=" + senha;
+    }
+}

@@ -1,0 +1,4 @@
+url = mysql://root:8P43FIuJNLiY1tzSImf4@containers-us-west-103.railway.app:6263/railway;
+usuario = root;
+senha = 8P43FIuJNLiY1tzSImf4;
+	

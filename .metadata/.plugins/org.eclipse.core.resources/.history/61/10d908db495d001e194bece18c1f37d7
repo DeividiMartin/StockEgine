@@ -1,0 +1,45 @@
+package front;
+
+import java.awt.EventQueue;
+
+import javax.swing.JButton;
+import javax.swing.JInternalFrame;
+import javax.swing.JPanel;
+
+public class Adicionar extends JInternalFrame {
+
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Adicionar frame = new Adicionar();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public Adicionar() {
+        setTitle("Adicionar");
+        setClosable(true);
+        setResizable(true);
+        setMaximizable(true);
+        setIconifiable(true);
+        setSize(300, 200);
+        
+        JPanel panel = new JPanel();
+        JButton button = new JButton("Botão na janela interna");
+        panel.add(button);
+        getContentPane().add(panel);
+    }
+}

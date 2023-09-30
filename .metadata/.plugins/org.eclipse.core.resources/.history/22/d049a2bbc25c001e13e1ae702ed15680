@@ -1,0 +1,18 @@
+package database;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+
+public class InsertDados {
+	DB db = new DB();
+	DadosDB dadosDB = new DadosDB();
+	
+	public void Insert() {
+	
+		
+		
+		
+	}
+
+}

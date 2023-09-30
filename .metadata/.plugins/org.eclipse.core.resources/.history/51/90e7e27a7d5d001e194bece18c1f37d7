@@ -1,0 +1,117 @@
+package front;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.JTextField;
+
+public class Adicionar extends JFrame {
+
+	private static final long serialVersionUID = 1L;
+	private JPanel contentPane;
+	private JTextField textModelo;
+	private JTextField textField;
+	private JTextField textField_1;
+	private JTextField textField_2;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Adicionar frame = new Adicionar();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public Adicionar() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 283, 383);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("Adicionar Motor");
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblNewLabel.setBounds(59, 11, 139, 28);
+		contentPane.add(lblNewLabel);
+		
+		JLabel lblModelo = new JLabel("Modelo");
+		lblModelo.setBounds(10, 83, 46, 14);
+		contentPane.add(lblModelo);
+		
+		textModelo = new JTextField();
+		textModelo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		textModelo.setBounds(76, 80, 176, 20);
+		contentPane.add(textModelo);
+		textModelo.setColumns(10);
+		
+		textField = new JTextField();
+		textField.setBounds(76, 118, 117, 20);
+		contentPane.add(textField);
+		textField.setColumns(10);
+		
+		JLabel lblMarca = new JLabel("Marca");
+		lblMarca.setBounds(10, 121, 46, 14);
+		contentPane.add(lblMarca);
+		
+		JLabel lblNewLabel_1 = new JLabel("Nº Motor");
+		lblNewLabel_1.setBounds(10, 156, 56, 14);
+		contentPane.add(lblNewLabel_1);
+		
+		textField_1 = new JTextField();
+		textField_1.setBounds(76, 153, 176, 20);
+		contentPane.add(textField_1);
+		textField_1.setColumns(10);
+		
+		JLabel lblNewLabel_2 = new JLabel("Potencia");
+		lblNewLabel_2.setBounds(10, 201, 56, 14);
+		contentPane.add(lblNewLabel_2);
+		
+		textField_2 = new JTextField();
+		textField_2.setBounds(76, 198, 46, 20);
+		contentPane.add(textField_2);
+		textField_2.setColumns(10);
+		
+		JButton btnCancelar = new JButton("Cancelar");
+		btnCancelar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Adicionar.this.dispose();
+			}
+		});
+		btnCancelar.setBounds(21, 274, 89, 23);
+		contentPane.add(btnCancelar);
+		
+		JButton btnAdicionar = new JButton("Adicionar");
+		btnAdicionar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				AddDB addDb = new AddDB();
+				
+				
+			}
+		});
+		btnAdicionar.setBounds(133, 274, 89, 23);
+		contentPane.add(btnAdicionar);
+	}
+}

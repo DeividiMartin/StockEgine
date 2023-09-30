@@ -1,0 +1,14 @@
+package application;
+
+import database.DB;
+
+public class Program {
+	public void main (String[]agrs) {
+		
+		DB db = new DB();
+		
+		db.Connection();
+		
+	}
+
+}

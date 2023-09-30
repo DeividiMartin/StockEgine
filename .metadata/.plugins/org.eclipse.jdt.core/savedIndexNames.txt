@@ -1,0 +1,4 @@
+INDEX VERSION 1.134+C:\Users\deivi\OneDrive\Área de Trabalho\ProjetoMotor\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index
+3160132462.index
+569034172.index

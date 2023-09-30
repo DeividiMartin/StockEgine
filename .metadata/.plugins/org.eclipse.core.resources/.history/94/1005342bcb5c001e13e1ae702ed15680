@@ -1,0 +1,46 @@
+package database;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+public class Delete {
+	DadosDB dadosDB = new DadosDB();
+
+
+
+	public void deleteDb(){
+	        try {
+	        	Connection conexao = DriverManager.getConnection(dadosDB.connectionString);
+	            // Crie uma instrução SQL parametrizada para excluir dados da tabela motores
+	            String sql = "DELETE FROM motores WHERE id = ?";
+	            
+	            // Crie um objeto PreparedStatement para evitar SQL Injection
+	            PreparedStatement preparedStatement = conexao.prepareStatement(sql);
+
+	            // Defina o valor do parâmetro (ID do registro a ser excluído)
+	            int idParaExcluir = 1; // Substitua pelo ID que deseja excluir
+	            preparedStatement.setInt(1, 1);
+
+	            // Execute a instrução SQL
+	            int linhasAfetadas = preparedStatement.executeUpdate();
+
+	            if (linhasAfetadas > 0) {
+	                System.out.println("Dados excluídos com sucesso.");
+	            } else {
+	                System.out.println("Nenhum dado foi excluído.");
+	            }
+
+	            // Feche os recursos
+	            preparedStatement.close();
+	            conexao.close();
+	        } catch (SQLException e) {
+	            System.err.println("Erro ao excluir dados.");
+	            e.printStackTrace();
+	        }
+	    }
+}
+
+
+

@@ -1,0 +1,13 @@
+package application;
+
+import java.sql.PreparedStatement;
+
+public class InsertDados {
+	DB db = new DB();
+	
+	public void Insert() {
+		String sql = "INSERT INTO motores(modelo, marca, numeromotor, potencia) VALUES (?, ?, ?, ?");
+		
+	}
+
+}

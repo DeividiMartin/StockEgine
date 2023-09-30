@@ -1,0 +1,42 @@
+package front;
+
+import java.awt.EventQueue;
+
+import javax.swing.JInternalFrame;
+import javax.swing.JLabel;
+import java.awt.Font;
+
+public class Adicionar extends JInternalFrame {
+
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Adicionar frame = new Adicionar();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public Adicionar() {
+		setBounds(100, 100, 246, 395);
+		getContentPane().setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("Adicionar");
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 22));
+		lblNewLabel.setBounds(59, 36, 104, 51);
+		getContentPane().add(lblNewLabel);
+
+	}
+}

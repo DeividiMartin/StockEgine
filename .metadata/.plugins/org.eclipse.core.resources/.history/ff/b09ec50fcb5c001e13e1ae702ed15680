@@ -1,0 +1,16 @@
+package application;
+
+import database.AddDB;
+
+public class Program {
+	public static void main (String[]agrs) {
+		
+		AddDB addDB = new AddDB();
+		
+		addDB.adicionarMotor();
+		
+
+		
+	}
+
+}
