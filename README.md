@@ -10,7 +10,7 @@ MySQL - Um servidor MySQL configurado e em execução
 Biblioteca JDBC para MySQL
 Ambiente de desenvolvimento Java (por exemplo, Eclipse, IntelliJ IDEA, NetBeans)
 Configuração do Banco de Dados
-Crie um banco de dados MySQL chamado car_engines.
+Crie um banco de dados MySQL chamado motores.
 Execute o script SQL fornecido no arquivo create_table.sql para criar a tabela engines no banco de dados. Esse script também inclui alguns dados de exemplo.
 Compilando e Executando o Aplicativo
 Clone este repositório para o seu sistema local.
